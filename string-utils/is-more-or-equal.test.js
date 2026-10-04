@@ -1,4 +1,4 @@
-import isMoreOrEqual from './is-moreOrEqual.js'
+import isMoreOrEqual from './is-more-or-equal.js';
 
 describe('Тесты isMoreOrEqual', () => {
 test('Должна вернуть true если a больше', () => {
