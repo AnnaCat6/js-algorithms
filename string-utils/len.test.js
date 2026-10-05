@@ -23,8 +23,14 @@ test('Должна корректно считать кириллицу', () => 
     expect(result).toBe(6);
 });
 
+});
+
 test('Должна выбросить TypeError если аргумент — число 123', () => {
 expect(() => len(123)).toThrow(TypeError);
 });
+
+test('Должна выбросить TypeError если аргумент — null, undefined', () => {
+expect(() => len(null)).toThrow(TypeError);
+expect(() => len(undefined)).toThrow(TypeError);
 
 });

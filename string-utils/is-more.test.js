@@ -52,5 +52,5 @@ expect(() => isMore(123, 'hello')).toThrow(TypeError);
 test('Должна выбросить TypeError если второй аргумент не строка', () => {
 expect(() => isMore('hello', null)).toThrow(TypeError);
 });
-    
+     
 });

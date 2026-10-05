@@ -34,4 +34,3 @@ expect(() => isMoreOrEqual('hello', null)).toThrow(TypeError);
 });
     
 });
-

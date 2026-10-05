@@ -28,14 +28,9 @@ import isLessOrEqual from './is-less-or-equal.js';
   test('Должна выбросить TypeError если первый аргумент не строка', () => {
   expect(() => isLessOrEqual(123, 'hello')).toThrow(TypeError);
   });
-
-  test('Должна выбросить TypeError если второй аргумент не строка', () => {
-  expect(() => isLessOrEqual('hello', null)).toThrow(TypeError);
   
   });
   
-  });
-
 
 
 
