@@ -21,9 +21,12 @@ const result = isNotEqual('','');
 expect(result).toBe(false);
 });
 
-test('Должна выбросить TypeError если аргумент(ы) не строка', () => {
-expect(() => isNotEqual(123, 'byebye')).toThrow(TypeError);
+test('Должна выбросить TypeError если первый аргумент не строка', () => {
+expect(() => isNotEqual(123, 'hello')).toThrow(TypeError);
+});
 
-  });
+test('Должна выбросить TypeError если второй аргумент не строка', () => {
+expect(() => isNotEqual('hello', null)).toThrow(TypeError);
+});
 
-})
+});

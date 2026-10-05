@@ -45,9 +45,12 @@ test('Должна вернуть false если a пустая, b нет', () =
 expect(isMore('', 'a')).toBe(false);
 });
 
-test('Должна выбросить TypeError если аргумент не строка', () => {
-expect(() => isMore(666666, Infinity)).toThrow(TypeError);
-    
-  });
+test('Должна выбросить TypeError если первый аргумент не строка', () => {
+expect(() => isMore(123, 'hello')).toThrow(TypeError);
+});
 
+test('Должна выбросить TypeError если второй аргумент не строка', () => {
+expect(() => isMore('hello', null)).toThrow(TypeError);
+});
+    
 });

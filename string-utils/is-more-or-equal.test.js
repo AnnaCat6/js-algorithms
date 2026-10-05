@@ -25,9 +25,13 @@ test('Должна вернуть true для пустых строк', () => {
 expect(isMoreOrEqual('', '')).toBe(true);
 });
 
-test('Должна выбросить TypeError если аргумент не строка', () => {
-expect(() => isMoreOrEqual([],'Matching')).toThrow(TypeError);
-    
-  });
-
+test('Должна выбросить TypeError если первый аргумент не строка', () => {
+expect(() => isMoreOrEqual(123, 'hello')).toThrow(TypeError);
 });
+
+test('Должна выбросить TypeError если второй аргумент не строка', () => {
+expect(() => isMoreOrEqual('hello', null)).toThrow(TypeError);
+});
+    
+});
+

@@ -25,9 +25,12 @@ test('Должна вернуть true для пустой vs непустой',
 expect(isLess('', 'a')).toBe(true);
 });
 
-test('Должна выбросить TypeError если аргумент не строка', () => {
-expect(() => isLess('Birthday', {})).toThrow(TypeError);
-    
-  });
+test('Должна выбросить TypeError если первый аргумент не строка', () => {
+expect(() => isLess(123, 'hello')).toThrow(TypeError);
+});
 
+test('Должна выбросить TypeError если второй аргумент не строка', () => {
+expect(() => isLess('hello', null)).toThrow(TypeError);
+});
+    
 });

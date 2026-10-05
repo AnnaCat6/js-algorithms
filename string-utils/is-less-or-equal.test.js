@@ -1,34 +1,41 @@
 import isLessOrEqual from './is-less-or-equal.js';
 
-describe('Тесты isLessOrEqual', () => {
+  describe('Тесты isLessOrEqual', () => {
   test('Должна вернуть true, если a явно меньше', () => {
-    expect(isLessOrEqual('car', 'cat')).toBe(true);
+  expect(isLessOrEqual('car', 'cat')).toBe(true);
   });
 
   test('Должна вернуть true, если строки равны', () => {
-    expect(isLessOrEqual('hello', 'hello')).toBe(true);
+  expect(isLessOrEqual('hello', 'hello')).toBe(true);
   });
 
   test('Должна вернуть false, если a больше', () => {
-    expect(isLessOrEqual('cat', 'car')).toBe(false);
+  expect(isLessOrEqual('cat', 'car')).toBe(false);
   });
 
   test('Должна вернуть true, если a короче и символы совпадают', () => {
-    expect(isLessOrEqual('hello', 'hello!')).toBe(true);
+  expect(isLessOrEqual('hello', 'hello!')).toBe(true);
   });
 
   test('Должна вернуть false, если a длиннее и символы совпадают', () => {
-    expect(isLessOrEqual('hello!', 'hello')).toBe(false);
+  expect(isLessOrEqual('hello!', 'hello')).toBe(false);
   });
 
   test('Должна вернуть true для пустых строк', () => {
-    expect(isLessOrEqual('', '')).toBe(true);
+  expect(isLessOrEqual('', '')).toBe(true);
   });
 
-  test('Должна выбросить TypeError, если аргумент не строка', () => {
-    expect(() => isLessOrEqual([], 'Matching')).toThrow(TypeError);
+  test('Должна выбросить TypeError если первый аргумент не строка', () => {
+  expect(() => isLessOrEqual(123, 'hello')).toThrow(TypeError);
   });
-});
+
+  test('Должна выбросить TypeError если второй аргумент не строка', () => {
+  expect(() => isLessOrEqual('hello', null)).toThrow(TypeError);
+  
+  });
+  
+  });
+
 
 
 
