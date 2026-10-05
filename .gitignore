@@ -7,3 +7,6 @@ index.html
 string-utils/chars
 string-utils/chars
 string-utils/chars
+package.json
+package-lock.json
+string-utils/package.json
