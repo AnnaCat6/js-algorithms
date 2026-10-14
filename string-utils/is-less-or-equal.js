@@ -1,22 +1,22 @@
 export default function isLessOrEqual(a, b) {
-  if (typeof a !== 'string' || typeof b !== 'string') {
+if (typeof a !== 'string' || typeof b !== 'string') {
     throw new TypeError('Аргументы должны быть строками!');
   }
+  
+let i = 0;
 
-  const minLength = Math.min(a.length, b.length);
-
-  for (let i = 0; i < minLength; i++) {
-    const codeA = a.charCodeAt(i);
-    const codeB = b.charCodeAt(i);
-
-    if (codeA < codeB) {
-      return true;
-    }
-
-    if (codeA > codeB) {
-      return false;
-    }
+while (a[i] !== undefined && b[i] !== undefined) {
+  if (a.charCodeAt(i) < b.charCodeAt(i)) {
+    return true;
+  } 
+  if (a.charCodeAt(i) > b.charCodeAt(i)) {
+    return false;
   }
-
-  return a.length <= b.length;
+  i++;
+  } 
+  if (a[i] === undefined) {
+    return true;
+  } else {
+    return false;
+  }
 }
