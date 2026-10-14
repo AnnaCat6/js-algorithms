@@ -1,18 +1,27 @@
-export function isEqual (a, b) {
-if (typeof a !== 'string' || typeof b !== 'string') { //1. сначала проверка на ошибку, строка не строка
-throw new TypeError ('Аргументы должны быть строго строками');
-} 
+export function isEqual(a, b) {
+  if (typeof a !== 'string' || typeof b !== 'string') {
+   throw new TypeError ('Аргументы должны быть строго строками');
+  }
+  
+  function check (i) {
+   const charA = a[i];
+   const charB = b[i];
 
-if (a.length !== b.length) { //2. сравниваем длину строк теперь (разность количества букв)
-return false; 
-}
-
-for(let i = 0; i < a.length; i++) { //3. проверка на то что каждая буква одинакова посимвольно, если нет то выходим ошибка, иначе правильно
-if (a[i] !== b[i]) {
-return false;
-    }
+  if (charA === undefined && charB === undefined) {
+    return true;
   }
 
-return true; 
-   
-}
+  if (charA === undefined || charB === undefined) {
+    return false;
+  }
+
+  if (charA !== charB) {
+    return false;
+  }
+
+  return check(i + 1);
+
+ }
+
+  return check(0);
+} 
