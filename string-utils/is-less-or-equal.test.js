@@ -12,7 +12,7 @@ import isLessOrEqual from './is-less-or-equal.js';
   test('Должна вернуть false, если a больше', () => {
   expect(isLessOrEqual('cat', 'car')).toBe(false);
   });
-
+ 
   test('Должна вернуть true, если a короче и символы совпадают', () => {
   expect(isLessOrEqual('hello', 'hello!')).toBe(true);
   });

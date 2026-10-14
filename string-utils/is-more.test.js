@@ -1,5 +1,5 @@
 import { isMore } from './is-more.js'
-
+ 
 describe('Тесты isMore', () => {
 test('Должна вернуть true если a явно больше — различие на третьем символе cat, car', () => {
 expect(isMore('cat', 'car')).toBe(true);

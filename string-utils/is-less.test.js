@@ -8,7 +8,7 @@ expect(isLess('car', 'cat')).toBe(true);
 test('Должна вернуть false если a больше', () => {
 expect(isLess('cat', 'car')).toBe(false);
 });
-
+ 
 test('Должна вернуть false для равных строк', () => {
 expect(isLess('hello', 'hello')).toBe(false);
 });

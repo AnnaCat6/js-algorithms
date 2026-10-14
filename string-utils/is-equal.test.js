@@ -2,7 +2,7 @@ import { isEqual } from './is-equal.js'
 
 describe('Тесты isEqual', () => {
 test('Должна вернуть true для равных строк hello = hello', () => {
-const result = isEqual('hello', 'hello');
+const result = isEqual('hello', 'hello'); 
 expect(result).toBe(true);
 });
 

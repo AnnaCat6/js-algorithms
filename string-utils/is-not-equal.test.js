@@ -15,7 +15,7 @@ test('Должна вернуть true для строк разной длины
 const result = isNotEqual('hi','hello');
 expect(result).toBe(true);
 });
-
+ 
 test('Должна вернуть false для пустых строк', () => {
 const result = isNotEqual('','');
 expect(result).toBe(false);

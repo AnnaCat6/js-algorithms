@@ -8,7 +8,7 @@ expect(isMoreOrEqual('cat', 'car')).toBe(true);
 test('Должна вернуть true если строки равны', () => {
 expect(isMoreOrEqual('hello', 'hello')).toBe(true);
 });
-
+ 
 test('Должна вернуть false если a меньше ', () => {
 expect(isMoreOrEqual('car', 'cat')).toBe(false);
 });
