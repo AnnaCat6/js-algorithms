@@ -1,40 +1,22 @@
+import { len } from './len.js';
+
 export function includes(str, search) {
   if (typeof str !== 'string' || typeof search !== 'string') {
     throw new TypeError('Аргументы должны быть строками!');
   }
+  if (search === '' || len(search) > len(str)) return search === '';
 
-  if (search === '') {
-    return true;
-  }
-
-  let strLen = 0;
-  for (let _ in str) strLen++;
-
-  let searchLen = 0;
-  for (let _ in search) searchLen++;
-
-  if (searchLen > strLen) {
-    return false;
-  }
+  const strLen = len(str);
+  const searchLen = len(search);
 
   for (let i = 0; i <= strLen - searchLen; i++) {
-    let match = true;
-
-    for (let j = 0; j < searchLen; j++) {
-      if (str[i + j] !== search[j]) {
-        match = false;
-        break;
-      }
-    }
-
-    if (match) {
-      return true; 
-    }
+    let j = 0;
+    while (j < searchLen && str[i + j] === search[j]) j++;
+    if (j === searchLen) return true;
   }
 
   return false;
 }
-
 
     
     

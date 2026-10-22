@@ -1,16 +1,14 @@
+import { len } from './len.js';
+
 export function reverse (str) {
   if (typeof str !== 'string') {
     throw new TypeError('Аргумент должен быть строкой!');
   }
 
-  let len = 0;
-  for (let _ in str) {
-    len++;
-  }
-
+  const strLen = len(str);
   let result = '';
 
-  for (let i = len - 1; i >= 0; i--) {
+  for (let i = strLen - 1; i >= 0; i--) {
     result += str[i];
   }
 
